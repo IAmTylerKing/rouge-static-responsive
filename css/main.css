@@ -12,12 +12,11 @@ body {
 
 .container{
 	max-width: 1200px;
-  width: 90%;
-	margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: row wrap;
+  	width: 90%;
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	flex-flow: row wrap;
 }
 
 h1,
@@ -40,24 +39,28 @@ h3 {
 p {
 	font-size: 0.875em;
 	line-height: 21px;
-  padding: 0 30px;
+  	padding: 0 30px;
 }
 
 
 /***** Used the flex property helps extend the border to its true width and height to fit the site *****/
 /***** Removed some properties for the h1 tag since they didn't have an effect being there or not *****/
 header {
-  display: flex;
-  justify-content: center;
-  align-items:center;
-  flex-flow: row wrap;
-  flex: 1 1 auto;
+	border-bottom: 3px solid #77a466;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+	padding: 10px 0 10px;
 }
 
-/***** The bottom border for the header wouldn't align properly so I created a seperate div so it was easier to adjust *****/
-.border-header {
-  width: 100%;
-  border-top: 3px solid #77a466
+header h1 {
+	margin: 0;
+    padding: 38px 20px 40px 20px; 
+    border-bottom: 3px solid #77a466; 
+    width: 100%;
 }
 
 header h1 span {
@@ -65,7 +68,8 @@ header h1 span {
 }
 
 header nav {
-	padding: 10px 0;
+	padding: 20px 0 ;
+	width: 100%;
 }
 
 header nav ul {
@@ -99,10 +103,8 @@ header nav ul li a{
   flex-flow: row wrap;
 }
 
-
 .main-image img {
 	width: 100%;
-  border-top: 3px solid #77a466;
 	border-bottom: 3px solid #77a466;
 }
 
@@ -176,4 +178,50 @@ footer span {
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: 0.875em;
+}
+
+@media all and (min-width:768px) {
+
+  .bottom-section {
+	justify-content: space-between;
+	align-items: flex-start;
+	border-top: 1px solid #eee;
+  }
+  .section-two {
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	padding: 0 20px;
+  }
+
+  .section-one,
+  .section-two,
+  .section-three {
+
+	border-top: none;
+	flex-basis: 30%;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    header {
+        justify-content: space-between;
+    }
+
+    header h1 {
+        width: 30%;
+        padding: 0;
+        border-bottom: none;
+        text-align: left;
+    }
+
+    header nav {
+        width: 40%;
+    }
+
+    header nav ul {
+        display: flex;
+        justify-content: space-between;
+	}
+
 }
